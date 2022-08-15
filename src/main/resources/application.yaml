@@ -1,0 +1,14 @@
+app.kafka.orders-topic: orders
+
+server:
+  port: 8181
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092,localhost:9093
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties.spring.json.trusted.packages: '*'
+
